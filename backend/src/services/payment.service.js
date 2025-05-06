@@ -8,8 +8,8 @@ module.exports = {
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         mode: 'payment',
-        success_url: `http://localhost:3000/payment/success/${order._id}`,
-        cancel_url: 'http://localhost:3000/cancel',
+        success_url: `https://illiterate-chef.onrender.com/payment/success/${order._id}`,
+        cancel_url: 'https://illiterate-chef.onrender.com/cancel',
         line_items: [
           {
             price_data: {
@@ -39,7 +39,7 @@ module.exports = {
             amount: order.totalAmount * 100,
             currency: 'INR',
             
-            callback_url: `http://localhost:3000/payment/success/${order._id}`,
+            callback_url: `https://illiterate-chef.onrender.com/payment/success/${order._id}`,
             callback_method: 'get'
         };
 
